@@ -21,7 +21,7 @@ on:
       WIFI_DRIVER:
         description: 'Choose WiFi Driver'
         required: true
-        default: 'v7.6.7.2-fw-20240823(recommend)'
+        default: 'v7.6.6.1-fw-20230306(recommend)'
         type: choice
         options:
         - v7.6.7.2-fw-20240823(recommend)
@@ -231,7 +231,7 @@ jobs:
 
     - name: 编译固件
       id: compile
-      run: |
+      run: 
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
